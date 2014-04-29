@@ -10,7 +10,7 @@ class Golf
 
   def self.hole5(a)
     a.size.times.flat_map {|i|
-      a.each_cons(i+1).map { |x| x }
+      a.each_cons(i+1).map.to_a
     }
   end
 
@@ -27,5 +27,8 @@ class Golf
         x
       end
     }
+
+  def self.hole7(a)
+
   end
 end
