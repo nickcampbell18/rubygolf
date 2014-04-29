@@ -14,7 +14,7 @@ class Golf
 
     def hole4 a
       r1 = /\Acat\(/
-      a.map do |x|
+      a.map { |x|
         case x
         when /\Aman\(/
           "hat(#{x})"
@@ -23,7 +23,7 @@ class Golf
         when /\Adog\(/
           "#{x[0..-2]}(bone))"
         end
-      end
+      }
     end
 
     def hole5 a
@@ -38,7 +38,7 @@ class Golf
 
     def hole8 n
       f = ->(x){ x < 2 ? x : f[x-1] + f[x-2] }
-      (1..n).map(&f)
+      (1..n).map &f
     end
 
     def hole9 n
