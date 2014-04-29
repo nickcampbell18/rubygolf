@@ -1,6 +1,6 @@
 class Golf
   class << self
-    def hole1(a)
+    def hole1 a
       a.inject :*
     end
 
@@ -8,11 +8,11 @@ class Golf
       [*('a'..'z')]
     end
 
-    def hole3(n)
+    def hole3 n
       (1..n).reduce :*
     end
 
-    def hole4(a)
+    def hole4 a
       r1 = /\Acat\(/
       a.map do |x|
         case x
@@ -26,25 +26,25 @@ class Golf
       end
     end
 
-    def hole5(a)
+    def hole5 a
       a.size.times.flat_map {|i|
         a.each_cons(i+1).map { |x| x }
       }
     end
 
-    def hole6(n)
+    def hole6 n
       (1..n).map { |i| (f = [["fizz"][i % 3], ["buzz"][i % 5]].compact.join).empty? ? i : f }
     end
 
-    def hole8(n)
+    def hole8 n
       f = ->(x){ x < 2 ? x : f[x-1] + f[x-2] }
       (1..n).map(&f)
     end
 
-    def hole9(n)
+    def hole9 n
       n.split(/\s/).map { |x|
         x.size <= 10 ? x : "#{x[0..3]}...#{x[-3..-1]}"
-      }.join(' ')
+      }.join ' '
     end
   end
 end
