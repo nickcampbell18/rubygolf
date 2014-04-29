@@ -40,7 +40,7 @@ class Golf
       x = []
       [].tap { |y|
       f = -> { y.concat 2 <= x.size ?
-            ["#{x.first}-#{x.last}"] : x
+            ["#{x[0]}-#{x[-1]}"] : x
             x = [] }
       a.each_with_index do |m, i|
         if n = m.next
