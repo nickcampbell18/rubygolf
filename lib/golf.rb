@@ -1,7 +1,17 @@
 class Golf
 
+  def self.hole1(a)
+    a.inject :*
+  end
+
   def self.hole3(n)
     (1..n).reduce(:*)
+  end
+
+  def self.hole5(a)
+    a.size.times.flat_map {|i|
+      a.each_cons(i+1).map { |x| x }
+    }
   end
 
   def self.hole6(n)
@@ -18,5 +28,4 @@ class Golf
       end
     }
   end
-
 end
