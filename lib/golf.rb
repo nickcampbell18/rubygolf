@@ -37,23 +37,21 @@ class Golf
     end
 
     def hole7 a
-      x, y = [], []
+      x = []
+      [].tap { |y|
       f = -> { y.concat 2 <= x.size ?
             ["#{x.first}-#{x.last}"] : x
             x = [] }
       a.each_with_index do |m, i|
-        n = m.next
-        if n
-          x << "#{m}"
-          if n != a[i + 1]
-            f[]
-          end
+        if n = m.next
+          x << m.to_s
+          f[] if n != a[i + 1]
         else
           f[]
-          y << "#{m}"
+          y << m.to_s
         end
       end
-      return y
+      }
     end
 
     def hole8 n
