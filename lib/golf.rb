@@ -33,7 +33,7 @@ class Golf
     end
 
     def hole6 n
-      (1..n).map { |i| (f = [%[fizz][i % 3], %[buzz][i % 5]].compact.join).empty? ? i : f }
+      (1..n).map { |i| (f = [["fizz"][i % 3], ["buzz"][i % 5]].compact.join).empty? ? i : f }
     end
 
     def hole8 n
