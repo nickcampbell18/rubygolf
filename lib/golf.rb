@@ -33,18 +33,7 @@ class Golf
     end
 
     def hole6(n)
-      (1..n).map{|x|
-        case
-        when x%15 == 0
-          'fizzbuzz'
-        when x%3 == 0
-          'fizz'
-        when x%5 == 0
-          'buzz'
-        else
-          x
-        end
-      }
+      (1..n).map { |i| (f = [["fizz"][i % 3], ["buzz"][i % 5]].compact.join).empty? ? i : f }
     end
 
     def hole8(n)
