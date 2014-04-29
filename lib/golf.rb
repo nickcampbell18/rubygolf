@@ -47,15 +47,15 @@ class Golf
       }
     end
 
+    def hole8(n)
+      f = ->(x){ x < 2 ? x : f[x-1] + f[x-2] }
+      (1..n).map(&f)
+    end
+
     def hole9(n)
       n.split(/\s/).map { |x|
         x.length <= 10 ? x : "#{x[0..3]}...#{x[-3..-1]}"
       }.join(' ')
     end
-  end
-
-  def self.hole8(n)
-    f = ->(x){ x < 2 ? x : f[x-1] + f[x-2] }
-    (1..n).map(&f)
   end
 end
