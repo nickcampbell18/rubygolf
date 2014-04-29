@@ -38,19 +38,18 @@ class Golf
 
     def hole7 a
       x, y = [], []
+      f = -> { y.concat 2 <= x.size ?
+            ["#{x.first}-#{x.last}"] : x
+            x = [] }
       a.each_with_index do |m, i|
         n = m.next
         if n
           x << "#{m}"
           if n != a[i + 1]
-            y.concat 2 <= x.size ?
-            ["#{x.first}-#{x.last}"] : x
-            x = []
+            f[]
           end
         else
-          y.concat 2 <= x.size ?
-          ["#{x.first}-#{x.last}"] : x
-          x = []
+          f[]
           y << "#{m}"
         end
       end
