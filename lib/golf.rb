@@ -60,7 +60,7 @@ class Golf
     end
 
     def hole9 n
-      n.split(/\s/).map { |x|
+      n.split.map { |x|
         x.size <= 10 ? x : "#{x[0..3]}...#{x[-3..-1]}"
       }.join ' '
     end
