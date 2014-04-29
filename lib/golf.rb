@@ -58,7 +58,7 @@ class Golf
     end
 
     def hole8 n
-      f = ->(x){ x < 2 ? x : f[x-1] + f[x-2] }
+      f = -> x{ x < 2 ? x : f[x-1] + f[x-2] }
       (1..n).map &f
     end
 
