@@ -36,6 +36,27 @@ class Golf
       (1..n).map { |i| (f = [["fizz"][i % 3], ["buzz"][i % 5]].compact.join).empty? ? i : f }
     end
 
+    def hole7 a
+      x, y = [], []
+      a.each_with_index do |m, i|
+        n = m.next
+        if n
+          x << "#{m}"
+          if n != a[i + 1]
+            y.concat 2 <= x.size ?
+            ["#{x.first}-#{x.last}"] : x
+            x = []
+          end
+        else
+          y.concat 2 <= x.size ?
+          ["#{x.first}-#{x.last}"] : x
+          x = []
+          y << "#{m}"
+        end
+      end
+      return y
+    end
+
     def hole8 n
       f = ->(x){ x < 2 ? x : f[x-1] + f[x-2] }
       (1..n).map(&f)
