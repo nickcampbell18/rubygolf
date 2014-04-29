@@ -5,11 +5,11 @@ class Golf
     end
 
   	def hole2
-      ('a'..'z').to_a
+      [*('a'..'z')]
     end
 
     def hole3(n)
-      (1..n).reduce(:*)
+      (1..n).reduce :*
     end
 
     def hole4(a)
